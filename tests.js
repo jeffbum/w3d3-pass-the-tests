@@ -1,4 +1,4 @@
-var moment = require('./moment.min.js')
+var moment = require('moment')
 
 // Null & Undefined
 function isNull(value) {
@@ -128,14 +128,14 @@ console.assert(justAMoment().includes('day') === true)
 
 // // Objects
 function myNameIs(value) {
-    return value
+    return value.name
 }
 console.log(myNameIs({name:'Your Name Here'}))
 console.assert(myNameIs({name:'Your Name Here'}) === 'Your Name Here')
 
 // // Arrays
-// function getFirstItem(value) {
-//     return value
-// }
-// console.log(getFirstItem(['Dog','Cat','Pig','Bird','Fish']))
-// console.assert(getFirstItem(['Dog','Cat','Pig','Bird','Fish']) === 'Dog')
+function getFirstItem(value) {
+    return value[0]
+}
+console.log(getFirstItem(['Dog','Cat','Pig','Bird','Fish']))
+console.assert(getFirstItem(['Dog','Cat','Pig','Bird','Fish']) === 'Dog')
